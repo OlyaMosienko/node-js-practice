@@ -27,11 +27,6 @@ yargs.command({
       type: 'string',
       describe: 'Note id',
       demandOption: true
-    },
-    title: {
-      type: 'string',
-      describe: 'New note title',
-      demandOption: true
     }
   },
   handler({ id }) {
@@ -46,6 +41,11 @@ yargs.command({
     id: {
       type: 'string',
       describe: 'Note id',
+      demandOption: true
+    },
+    title: {
+      type: 'string',
+      describe: 'New note title',
       demandOption: true
     }
   },

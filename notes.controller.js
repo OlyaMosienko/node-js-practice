@@ -47,6 +47,18 @@ async function removeNote(noteIdToRemove) {
   }
 }
 
+async function updateNote(id, title) {
+  const notes = await getNotes()
+
+  const updatedNotes = notes.map(note =>
+      note.id === id ? { ...note, title } : note
+  )
+
+  await saveNotes(updatedNotes)
+
+  console.log(chalk.bgMagenta(`Note with id="${id}" has been updated.`))
+}
+
 module.exports = {
-  addNote, printNotes, removeNote
+  addNote, printNotes, removeNote, updateNote
 }
